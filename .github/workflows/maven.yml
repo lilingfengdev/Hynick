@@ -26,8 +26,7 @@ jobs:
         cache: maven
     - run: git clone https://github.com/ITSPINGER/DisguiseAPI.git
     - run: cd DisguiseAPI && mvn clean install
-    - run: cd ..
-    - run: mvn --batch-mode --update-snapshots verify
+    - run: cd .. && mvn --batch-mode --update-snapshots verify
     - run: mkdir staging && cp target/*.jar staging
     - uses: actions/upload-artifact@v3
       with:
